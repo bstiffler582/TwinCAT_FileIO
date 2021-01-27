@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.5">
+  <POU Name="MAIN" Id="{60965ff1-8670-4834-98f6-ffd9a287dceb}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbFileIO 		: FB_FileIO;
+	
+	sReadPath		: STRING := 'C:\TestFile.txt';
+	sWritePath		: STRING := 'C:\TestFile.txt';
+	sCopyPath		: STRING := 'C:\TestCopy.txt';
+	
+	sTestRead		: STRING(255);
+	arReadData		: ARRAY[0..255] OF BYTE;
+	
+	sTestWrite		: STRING(255);
+	sTestAppend		: STRING;
+	
+	sReadArray		: ARRAY[0..9] OF T_MaxString;
+	sWriteArray		: ARRAY[0..9] OF T_MaxString;
+	
+	sException		: STRING;
+	
+	i				: DINT;
+	bFileExists		: BOOL;
+	iFileSize		: DINT;
+	
+	bWriteAllText: BOOL;
+	bAppendText: BOOL;
+	bAppendLines: BOOL;
+	bWriteAllLines: BOOL;
+	bWriteAllBytes: BOOL;
+	bReadAllText: BOOL;
+	bReadAllLines: BOOL;
+	bReadAllBytes: BOOL;
+	bCheckExists: BOOL;
+	bCopyFile: BOOL;
+	bDeleteFile: BOOL;
+	bReadSize: BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// cyclic FB call - no longer needed
+//fbFileIO();
+
+// copy exception info
+sException := fbFileIO.Exception;
+
+/// File Writes
+
+IF bWriteAllText THEN
+	sTestWrite := 'Write this string to a file. $N';
+	
+	// Write Text
+	IF fbFileIO.WriteAllText(sWritePath, sTestWrite) THEN
+		bWriteAllText := FALSE;
+	END_IF
+END_IF
+
+IF bAppendText THEN
+	sTestWrite := 'Append this string to a file. $N';
+	
+	// Append Text
+	IF fbFileIO.AppendText(sWritePath, sTestWrite) THEN
+		bAppendText := FALSE;
+	END_IF
+END_IF
+
+IF bAppendLines THEN
+	FOR i := 0 TO 4 DO
+		sWriteArray[i] := CONCAT('$0AAppended Line ', TO_STRING(i));
+	END_FOR
+	
+	// Append Lines
+	IF fbFileIO.AppendLines(sWritePath, FALSE, sWriteArray) THEN
+		bAppendLines := FALSE;
+	END_IF
+END_IF
+
+IF bWriteAllLines THEN
+	FOR i := 0 TO 4 DO
+		sWriteArray[i] := CONCAT('Overwrite contents line ', TO_STRING(i));
+	END_FOR
+	
+	// Write Lines from Array
+	IF fbFileIO.WriteAllLines(sWritePath, TRUE, sWriteArray) THEN
+		bWriteAllLines := FALSE;
+	END_IF
+END_IF
+
+IF bWriteAllBytes THEN
+	
+	// Write Binary Data
+	IF fbFileIO.WriteAllBytes(sCopyPath, arReadData) THEN
+		bWriteAllBytes := FALSE;
+	END_IF
+END_IF
+
+/// Read tests
+
+IF bReadAllText THEN
+	
+	// Read Text
+	IF fbFileIO.ReadAllText(sReadPath, sTestRead) THEN
+		bReadAllText := FALSE;
+	END_IF
+END_IF
+
+IF bReadAllLines THEN
+	
+	// Read Lines to Array
+	IF fbFileIO.ReadAllLines(sReadPath, sReadArray) THEN
+		bReadAllLines := FALSE;
+	END_IF
+END_IF
+
+IF bReadAllBytes THEN
+	
+	// Read Binary Data
+	IF fbFileIO.ReadAllBytes(sReadPath, arReadData) THEN
+		bReadAllBytes := FALSE;
+	END_IF
+END_IF
+
+/// File Operations
+
+IF bCheckExists THEN
+	
+	// Check if File Exists (sync method - can be called inline)
+	bFileExists := fbFileIO.Exists(sCopyPath);
+	bCheckExists := FALSE;
+END_IF
+
+IF bCopyFile THEN
+	
+	// Copy File
+	IF fbFileIO.CopyFile(sWritePath, sCopyPath) THEN
+		bCopyFile := FALSE;
+	END_IF
+END_IF
+
+IF bDeleteFile THEN
+	
+	// Delete File
+	IF fbFileIO.DeleteFile(sCopyPath) THEN
+		bDeleteFile := FALSE;
+	END_IF
+END_IF
+
+IF bReadSize THEN
+	
+	IF fbFileIO.GetSize(sWritePath, iFileSize) THEN
+		bReadSize := FALSE;
+	END_IF
+END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="186" Count="0" />
+      <LineId Id="2" Count="0" />
+      <LineId Id="219" Count="0" />
+      <LineId Id="187" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="185" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="342" Count="0" />
+      <LineId Id="220" Count="0" />
+      <LineId Id="188" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="26" Count="1" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="34" Count="1" />
+      <LineId Id="356" Count="0" />
+      <LineId Id="221" Count="0" />
+      <LineId Id="189" Count="0" />
+      <LineId Id="36" Count="2" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="42" Count="1" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="54" Count="1" />
+      <LineId Id="222" Count="0" />
+      <LineId Id="190" Count="0" />
+      <LineId Id="45" Count="2" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="59" Count="4" />
+      <LineId Id="223" Count="0" />
+      <LineId Id="192" Count="0" />
+      <LineId Id="64" Count="2" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="207" Count="1" />
+      <LineId Id="224" Count="0" />
+      <LineId Id="209" Count="3" />
+      <LineId Id="206" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="228" Count="0" />
+      <LineId Id="196" Count="0" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="71" Count="1" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="78" Count="1" />
+      <LineId Id="229" Count="0" />
+      <LineId Id="197" Count="0" />
+      <LineId Id="80" Count="2" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="109" Count="0" />
+      <LineId Id="83" Count="0" />
+      <LineId Id="230" Count="0" />
+      <LineId Id="198" Count="0" />
+      <LineId Id="110" Count="0" />
+      <LineId Id="112" Count="1" />
+      <LineId Id="111" Count="0" />
+      <LineId Id="231" Count="1" />
+      <LineId Id="256" Count="5" />
+      <LineId Id="255" Count="0" />
+      <LineId Id="233" Count="15" />
+      <LineId Id="292" Count="0" />
+      <LineId Id="291" Count="0" />
+      <LineId Id="293" Count="0" />
+      <LineId Id="295" Count="0" />
+      <LineId Id="297" Count="1" />
+      <LineId Id="294" Count="0" />
+      <LineId Id="151" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
