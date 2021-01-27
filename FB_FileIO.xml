@@ -1,0 +1,2630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="Beckhoff Automation GmbH" productName="TwinCAT PLC Control" productVersion="3.5.13.20" creationDateTime="2021-01-27T10:52:59.5353945" />
+  <contentHeader name="PLC" modificationDateTime="2021-01-27T10:52:59.5353945">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation />
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous>
+      <pou name="FB_FileIO" pouType="functionBlock">
+        <interface>
+          <localVars>
+            <variable name="_fbFileOpen">
+              <type>
+                <derived name="FB_FileOpen" />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> open / close FBs</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_fbFileClose">
+              <type>
+                <derived name="FB_FileClose" />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_fbFileRead">
+              <type>
+                <derived name="FB_FileRead" />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> reader FBs</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_fbLineRead">
+              <type>
+                <derived name="FB_FileGets" />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_fbSeek">
+              <type>
+                <derived name="FB_FileSeek" />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> seek/tell</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_fbTell">
+              <type>
+                <derived name="FB_FileTell" />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_fbFileWrite">
+              <type>
+                <derived name="FB_FileWrite" />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> writer FBs</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_fbLineWrite">
+              <type>
+                <derived name="FB_FilePuts" />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_fbFileDelete">
+              <type>
+                <derived name="FB_FileDelete" />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_nHandle">
+              <type>
+                <UINT />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> shared locals</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_nSeq">
+              <type>
+                <DINT />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_nIdx">
+              <type>
+                <DINT />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_copyBuffer">
+              <type>
+                <pointer>
+                  <baseType>
+                    <BYTE />
+                  </baseType>
+                </pointer>
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_copyRW">
+              <type>
+                <BOOL />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_nMaxReadLen">
+              <type>
+                <DINT />
+              </type>
+              <initialValue>
+                <simpleValue value="1048576" />
+              </initialValue>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+              <documentation>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml"> property fields w/ init values</xhtml>
+              </documentation>
+            </variable>
+            <variable name="_tReadTimeout">
+              <type>
+                <TIME />
+              </type>
+              <initialValue>
+                <simpleValue value="TIME#1s0ms" />
+              </initialValue>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_nMaxWriteLen">
+              <type>
+                <DINT />
+              </type>
+              <initialValue>
+                <simpleValue value="1048576" />
+              </initialValue>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_tWriteTimeout">
+              <type>
+                <TIME />
+              </type>
+              <initialValue>
+                <simpleValue value="TIME#1s0ms" />
+              </initialValue>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_bTrimWriteData">
+              <type>
+                <BOOL />
+              </type>
+              <initialValue>
+                <simpleValue value="TRUE" />
+              </initialValue>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+            <variable name="_sException">
+              <type>
+                <string />
+              </type>
+              <addData>
+                <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                  <Attributes>
+                    <Attribute Name="hide" Value="" />
+                  </Attributes>
+                </data>
+              </addData>
+            </variable>
+          </localVars>
+          <addData>
+            <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+              <Attributes>
+                <Attribute Name="hide_all_locals" Value="" />
+              </Attributes>
+            </data>
+          </addData>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">// cyclic calls
+THIS^.Execute();</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="AppendLines" ObjectId="36f340aa-5e81-47a1-94ab-8b19912f80ca">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Path">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Path of file to write</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="InsertNewlines">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Insert Newlines chars after each array element</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Contents">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <derived name="T_MaxString" />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <addData>
+                      <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                        <Attributes>
+                          <Attribute Name="variable_length_array" />
+                          <Attribute Name="Dimensions" Value="1" />
+                        </Attributes>
+                      </data>
+                    </addData>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Array of strings to write</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_sMeth">
+                    <type>
+                      <string />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'AppendLines(): '" />
+                    </initialValue>
+                  </variable>
+                  <variable name="_sLine">
+                    <type>
+                      <derived name="T_MaxString" />
+                    </type>
+                  </variable>
+                </localVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Appends a string array to a file. If the file does not exist, it is created.</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">CASE _nSeq OF
+	0 : 
+		_sException := '';
+		_nHandle := 0;
+		
+		_fbFileOpen(sPathName := Path, nMode := (FOPEN_MODETEXT OR FOPEN_MODEAPPEND), bExecute := TRUE);
+		_nSeq := 1;
+		
+	1 :
+		IF NOT _fbFileOpen.bBusy THEN
+			_fbFileOpen(bExecute := FALSE);
+			IF _fbFileOpen.bError THEN
+				_sException := 'Error in FB_FileOpen; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileOpen.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nHandle := _fbFileOpen.hFile;
+				_nIdx := LOWER_BOUND(Contents, 1);
+				_nSeq := 2;
+			END_IF
+		END_IF
+		
+	2 :
+		IF (_nIdx &lt;= UPPER_BOUND(Contents, 1)) THEN
+			IF Contents[_nIdx] &lt;&gt; '' THEN
+				_sLine := SEL(InsertNewlines, Contents[_nIdx], CONCAT(Contents[_nIdx], '$0A'));
+				_fbLineWrite(hFile := _nHandle, sLine := _sLine, 
+					tTimeout := _tWriteTimeout, bExecute := TRUE);
+			END_IF
+			_nSeq := 3;
+		ELSE
+			_nSeq := 4;
+		END_IF
+		
+	3 :
+		IF NOT _fbLineWrite.bBusy THEN
+			_fbLineWrite(bExecute := FALSE);
+			IF _fbLineWrite.bError THEN
+				_sException := 'Error in FB_FilePuts; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbLineWrite.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nIdx := _nIdx + 1;
+				_nSeq := 2;
+			END_IF
+		END_IF
+		
+	
+	4 : 
+		_fbFileClose(hFile := _nHandle, bExecute := TRUE);
+		_nSeq := 5;
+		
+	5 : 
+		IF NOT _fbFileClose.bBusy THEN
+			_fbFileClose(bExecute := FALSE);
+			IF _fbFileClose.bError THEN
+				_sException := 'Error in FB_FileClose; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileClose.nErrId));
+				_nHandle := 0;
+				_nSeq := 9;
+			ELSE
+				_nSeq := 0;
+				AppendLines := TRUE;
+			END_IF
+		END_IF
+		
+	9 : 
+		IF _nHandle &lt;&gt; 0 THEN
+			_nSeq := 4;
+		ELSE
+			_sException := CONCAT(_sMeth, _sException);
+			
+			_nSeq := 0;
+			AppendLines := TRUE;
+		END_IF
+		
+END_CASE
+
+THIS^.Execute();
+
+RETURN;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Appends a string array to a file. If the file does not exist, it is created.
+METHOD AppendLines : BOOL
+VAR_INPUT
+	// Path of file to write
+	Path			: STRING;
+	// Insert Newlines chars after each array element
+	InsertNewlines	: BOOL;
+END_VAR
+VAR_IN_OUT
+	// Array of strings to write
+	Contents		: ARRAY[*] OF T_MaxString;
+END_VAR
+VAR
+	_sMeth			: STRING := 'AppendLines(): ';
+	_sLine			: T_MaxString;
+END_VAR</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="AppendText" ObjectId="2ccc9883-848b-4927-8cc0-43df17a58b31">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Path">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Path of file to append write string</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Contents">
+                    <type>
+                      <derived name="__SYSTEM.AnyType" />
+                    </type>
+                    <addData>
+                      <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                        <Attributes>
+                          <Attribute Name="anytypeclass" Value="ANY" />
+                        </Attributes>
+                      </data>
+                    </addData>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> String to append</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_sMeth">
+                    <type>
+                      <string />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'AppendText(): '" />
+                    </initialValue>
+                  </variable>
+                  <variable name="_nWriteLen">
+                    <type>
+                      <DINT />
+                    </type>
+                  </variable>
+                  <variable name="_pCharIdx">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                  </variable>
+                  <variable name="_charVal">
+                    <type>
+                      <BYTE />
+                    </type>
+                  </variable>
+                </localVars>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                    <Attributes>
+                      <Attribute Name="hasanytype" />
+                    </Attributes>
+                  </data>
+                </addData>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Appends a string to a file. If the file does not exist, it is created.</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">IF UDINT_TO_INT(Contents.TypeClass) &lt;&gt; 16 THEN
+	_sException := 'WriteData parameter is invalid type (STRING).';
+	AppendText := TRUE;
+END_IF
+
+CASE _nSeq OF
+	0 : 
+		_sException := '';
+		_nHandle := 0;
+		
+		_fbFileOpen(sPathName := Path, nMode := (FOPEN_MODETEXT OR FOPEN_MODEAPPEND), bExecute := TRUE);
+		_nSeq := 1;
+		
+	1 :
+		IF NOT _fbFileOpen.bBusy THEN
+			_fbFileOpen(bExecute := FALSE);
+			IF _fbFileOpen.bError THEN
+				_sException := 'Error in FB_FileOpen; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileOpen.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nHandle := _fbFileOpen.hFile;
+				_nSeq := 2;
+			END_IF
+		END_IF
+		
+	2 :
+		IF _bTrimWriteData THEN
+			_nWriteLen := THIS^.TrimLen(Contents.pValue, Contents.diSize);
+		ELSE
+			_nWriteLen := SEL((Contents.diSize &gt; _nMaxWriteLen), Contents.diSize, _nMaxWriteLen);
+		END_IF
+		
+		_fbFileWrite(hFile := _nHandle, pWriteBuff := Contents.pValue, cbWritelen := TO_UDINT(_nWriteLen), 
+			tTimeout := _tWriteTimeout, bExecute := TRUE);
+			
+		_nSeq := 3;
+		
+	3 :
+		IF NOT _fbFileWrite.bBusy THEN
+			_fbFileWrite(bExecute := FALSE);
+			IF _fbFileWrite.bError THEN
+				_sException := 'Error in FB_FileWrite; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileWrite.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nSeq := 4;
+			END_IF
+		END_IF
+		
+	
+	4 : 
+		_fbFileClose(hFile := _nHandle, bExecute := TRUE);
+		_nSeq := 5;
+		
+	5 : 
+		IF NOT _fbFileClose.bBusy THEN
+			_fbFileClose(bExecute := FALSE);
+			IF _fbFileClose.bError THEN
+				_sException := 'Error in FB_FileClose; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileClose.nErrId));
+				_nHandle := 0;
+				_nSeq := 9;
+			ELSE
+				_nSeq := 0;
+				AppendText := TRUE;
+			END_IF
+		END_IF
+		
+	9 : 
+		IF _nHandle &lt;&gt; 0 THEN
+			_nSeq := 4;
+		ELSE
+			_sException := CONCAT(_sMeth, _sException);
+			
+			_nSeq := 0;
+			AppendText := TRUE;
+		END_IF
+		
+END_CASE
+
+THIS^.Execute();
+
+RETURN;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Appends a string to a file. If the file does not exist, it is created.
+METHOD AppendText : BOOL
+VAR_INPUT
+	// Path of file to append write string
+	Path			: STRING;
+	// String to append
+	Contents		: ANY;
+END_VAR
+VAR
+	_sMeth			: STRING := 'AppendText(): ';
+	_nWriteLen		: DINT;
+	_pCharIdx		: POINTER TO BYTE;
+	_charVal		: BYTE;
+END_VAR</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="CopyFile" ObjectId="878f3643-5679-4be8-8d08-6c7c5c61ab2e">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Source">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Path of source file</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Destination">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Path of destination file</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_sMeth">
+                    <type>
+                      <string />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'CopyFile(): '" />
+                    </initialValue>
+                  </variable>
+                  <variable name="_nReadLen">
+                    <type>
+                      <UDINT />
+                    </type>
+                  </variable>
+                </localVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Creates a copy of the source file</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">
+CASE _nSeq OF
+	0 :
+		_sException := '';
+		_copyRW := FALSE;
+		_nSeq := 1;
+		
+	1 : 
+		_nHandle := 0;
+		
+		IF NOT _copyRW THEN
+			_fbFileOpen(sPathName := Source, nMode := (FOPEN_MODEBINARY OR FOPEN_MODEREAD), bExecute := TRUE);
+		ELSE
+			_fbFileOpen(sPathName := Destination, nMode := (FOPEN_MODEBINARY OR FOPEN_MODEWRITE), bExecute := TRUE);
+		END_IF
+		
+		_nSeq := 2;
+		
+	2 :
+		IF NOT _fbFileOpen.bBusy THEN
+			_fbFileOpen(bExecute := FALSE);
+			IF _fbFileOpen.bError THEN
+				_sException := 'Error in FB_FileOpen; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileOpen.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nHandle := _fbFileOpen.hFile;
+				_nSeq := SEL(_copyRW, 3, 5);
+			END_IF
+		END_IF
+		
+	3 : 
+		_copyBuffer := __NEW(BYTE, TO_UDINT(_nMaxReadLen));
+		_fbFileRead(hFile := _nHandle, pReadBuff := _copyBuffer, 
+			cbReadLen := TO_UDINT(_nMaxReadLen), tTimeout := _tReadTimeout, bExecute := TRUE);
+			
+		_nSeq := 4;
+		
+	4 :
+		IF (NOT _fbFileRead.bBusy) OR _fbFileRead.bEOF THEN
+			_fbFileRead(bExecute := FALSE);
+			IF _fbFileRead.bError THEN
+				_sException := 'Error in FB_FileRead; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileRead.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nSeq := 7;
+			END_IF
+		END_IF
+		
+	5 : 
+		_nReadLen := _fbFileRead.cbRead;
+		
+		_fbFileWrite(hFile := _nHandle, pWriteBuff := _copyBuffer, cbWritelen := _nReadLen, 
+			tTimeout := _tWriteTimeout, bExecute := TRUE);
+			
+		_nSeq := 6;
+		
+	6 : 
+		IF NOT _fbFileWrite.bBusy THEN
+			_fbFileWrite(bExecute := FALSE);
+			__DELETE(_copyBuffer);
+			IF _fbFileWrite.bError THEN
+				_sException := 'Error in FB_FileWrite; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileWrite.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nSeq := 7;
+			END_IF
+		END_IF
+		
+		
+	7 : 
+		_fbFileClose(hFile := _nHandle, bExecute := TRUE);
+		_nSeq := 8;
+		
+	8 : 
+		IF NOT _fbFileClose.bBusy THEN
+			_fbFileClose(bExecute := FALSE);
+			IF _fbFileClose.bError THEN
+				_sException := 'Error in FB_FileClose; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileClose.nErrId));
+				_nHandle := 0;
+				_nSeq := 9;
+			ELSE
+				IF _copyRW THEN
+					_nSeq := 0;
+					CopyFile := TRUE;
+				ELSE
+					_copyRW := TRUE;
+					_nSeq := 1;
+				END_IF
+			END_IF
+		END_IF
+		
+	9 :
+		IF (_copyBuffer &lt;&gt; 0) THEN
+			__DELETE(_copyBuffer);
+		END_IF
+		
+		IF _nHandle &lt;&gt; 0 THEN
+			_nSeq := 7;
+		ELSE
+			_sException := CONCAT(_sMeth, _sException);
+			_nSeq := 0;
+			CopyFile := TRUE;
+		END_IF
+		
+END_CASE
+
+THIS^.Execute();
+
+RETURN;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Creates a copy of the source file
+METHOD CopyFile : BOOL
+VAR_INPUT
+	// Path of source file
+	Source			: STRING;
+	// Path of destination file
+	Destination		: STRING;
+END_VAR
+VAR
+	_sMeth			: STRING := 'CopyFile(): ';
+	_nReadLen		: UDINT;
+END_VAR
+</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="DeleteFile" ObjectId="0745acf6-2a86-42ea-82dc-4d0a62b3ea31">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Path">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> File path</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_sMeth">
+                    <type>
+                      <string />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'DeleteFile(): '" />
+                    </initialValue>
+                  </variable>
+                </localVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Deletes file</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">CASE _nSeq OF
+	0 : 
+		_sException := '';
+		_nHandle := 0;
+		
+		_fbFileDelete(sPathName := Path, tTimeout := _tWriteTimeout, bExecute := TRUE);
+		_nSeq := 1;
+		
+	1 : 
+		IF NOT _fbFileDelete.bBusy THEN
+			_fbFileDelete(bExecute := FALSE);
+			IF _fbFileDelete.bError THEN
+				_sException := 'Error in FB_FileDelete; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileDelete.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nSeq := 0;
+				DeleteFile := TRUE;
+			END_IF
+		END_IF
+		
+	9 : 
+		_sException := CONCAT(_sMeth, _sException);
+		
+		_nSeq := 0;
+		DeleteFile := TRUE;
+		
+END_CASE
+
+THIS^.Execute();
+
+RETURN;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Deletes file
+METHOD DeleteFile : BOOL
+VAR_INPUT
+	// File path
+	Path			: STRING;
+END_VAR
+VAR
+	_sMeth			: STRING := 'DeleteFile(): ';
+END_VAR</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="Execute" ObjectId="402b97a9-4372-43e1-8b1c-328e7aeab612">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/accessmodifiers" handleUnknown="implementation">
+                    <AccessModifiers Private="true" />
+                  </data>
+                </addData>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">/// Cyclic FB calls
+
+// file open/close
+_fbFileOpen();
+_fbFileClose();
+
+// file read
+_fbFileRead();
+_fbLineRead();
+_fbSeek();
+_fbTell();
+
+// file write
+_fbFileWrite();
+_fbLineWrite();
+
+// file delete
+_fbFileDelete();</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">METHOD PRIVATE Execute : BOOL
+VAR_INPUT
+END_VAR
+</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="Exists" ObjectId="a7b26c8e-b19a-4dc9-8c22-1d29ce9e704e">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Path">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Path to file</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_sMeth">
+                    <type>
+                      <string />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'Exists(): '" />
+                    </initialValue>
+                  </variable>
+                  <variable name="_bDone">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="FALSE" />
+                    </initialValue>
+                  </variable>
+                </localVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Check if file exists [Synchronous Method]</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">
+WHILE NOT _bDone DO
+	
+	_fbFileOpen();
+	_fbFileClose();
+	
+	CASE _nSeq OF
+		0 :
+			_sException := '';
+			_fbFileOpen(sPathName := Path, nMode := (FOPEN_MODEBINARY OR FOPEN_MODEREAD), bExecute := TRUE);
+			_nSeq := 1;
+			
+		1 :
+			IF NOT _fbFileOpen.bBusy THEN
+				_fbFileOpen(bExecute := FALSE);
+				IF _fbFileOpen.bError THEN
+					IF _fbFileOpen.nErrId = 16#70C THEN
+						_nSeq := 0;
+						_bDone := TRUE;
+					ELSE
+						_sException := 'Error in FB_FileOpen; ';
+						_sException := CONCAT(_sException, TO_STRING(_fbFileOpen.nErrId));
+						_nSeq := 9;
+					END_IF
+					Exists := FALSE;
+				ELSE
+					_nHandle := _fbFileOpen.hFile;
+					_nSeq := 4;
+					Exists := TRUE;
+				END_IF
+			END_IF
+			
+		4 : 
+			_fbFileClose(hFile := _nHandle, bExecute := TRUE);
+			_nSeq := 5;
+			
+		5 : 
+			IF NOT _fbFileClose.bBusy THEN
+				_fbFileClose(bExecute := FALSE);
+				IF _fbFileClose.bError THEN
+					_sException := 'Error in FB_FileClose; ';
+					_sException := CONCAT(_sException, TO_STRING(_fbFileClose.nErrId));
+					_nHandle := 0;
+					_nSeq := 9;
+				ELSE
+					_nSeq := 0;
+					_bDone := TRUE;
+				END_IF
+			END_IF
+			
+		9 :
+			IF _nHandle &lt;&gt; 0 THEN
+				_nSeq := 4;
+			ELSE
+				_sException := CONCAT(_sMeth, _sException);
+				_nSeq := 0;
+				_bDone := TRUE;
+			END_IF
+			
+	END_CASE
+	
+END_WHILE
+
+RETURN;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Check if file exists [Synchronous Method]
+METHOD Exists : BOOL
+VAR_INPUT
+	// Path to file
+	Path			: STRING;
+END_VAR
+VAR
+	_sMeth			: STRING := 'Exists(): ';
+	_bDone			: BOOL := FALSE;
+END_VAR
+</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="GetSize" ObjectId="c76ffc9b-ac92-421a-8c59-e1bd0cddcaaf">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Path">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Path to file</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="FileSize">
+                    <type>
+                      <derived name="REFERENCE TO DINT" />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml">	File size</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_sMeth">
+                    <type>
+                      <string />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'GetSize(): '" />
+                    </initialValue>
+                  </variable>
+                </localVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Gets the file size in bytes</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">
+CASE _nSeq OF
+	0 :
+		_sException := '';
+		_nHandle := 0;
+		
+		_fbFileOpen(sPathName := Path, nMode := (FOPEN_MODEBINARY OR FOPEN_MODEREAD), bExecute := TRUE);
+		_nSeq := 1;
+		
+	1 :
+		IF NOT _fbFileOpen.bBusy THEN
+			_fbFileOpen(bExecute := FALSE);
+			IF _fbFileOpen.bError THEN
+				_sException := 'Error in FB_FileOpen; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileOpen.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nHandle := _fbFileOpen.hFile;
+				_nSeq := 2;
+			END_IF
+		END_IF
+		
+	2 : 
+		_fbSeek(sNetId := '', hFile := _nHandle, eOrigin := E_SeekOrigin.SEEK_END, bExecute := TRUE);
+		_nSeq := 3;
+		
+	3 :
+		IF (NOT _fbSeek.bBusy) THEN
+			_fbSeek(bExecute := FALSE);
+			IF _fbSeek.bError THEN
+				_sException := 'Error in FB_FileSeek; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbSeek.nErrId));
+				_nSeq := 9;
+			ELSE
+				_fbTell(sNetId := '', hFile := _nHandle, bExecute := TRUE);
+				_nSeq := 4;
+			END_IF
+		END_IF
+		
+	4 : 
+		IF (NOT _fbTell.bBusy) THEN
+			_fbTell(bExecute := FALSE);
+			IF _fbTell.bError THEN
+				_sException := 'Error in FB_FileTell; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbTell.nErrId));
+				_nSeq := 9;
+			ELSE
+				FileSize := _fbTell.nSeekPos;
+				_nSeq := 5;
+			END_IF
+		END_IF
+		
+		
+	5 : 
+		_fbFileClose(hFile := _nHandle, bExecute := TRUE);
+		_nSeq := 6;
+		
+	6 : 
+		IF NOT _fbFileClose.bBusy THEN
+			_fbFileClose(bExecute := FALSE);
+			IF _fbFileClose.bError THEN
+				_sException := 'Error in FB_FileClose; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileClose.nErrId));
+				_nHandle := 0;
+				_nSeq := 9;
+			ELSE
+				_nSeq := 0;
+				GetSize := TRUE;
+			END_IF
+		END_IF
+		
+	9 :
+		IF _nHandle &lt;&gt; 0 THEN
+			_nSeq := 4;
+		ELSE
+			_sException := CONCAT(_sMeth, _sException);
+			
+			_nSeq := 0;
+			GetSize := TRUE;
+		END_IF
+		
+END_CASE
+
+THIS^.Execute();
+
+RETURN;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Gets the file size in bytes
+METHOD GetSize : BOOL
+VAR_INPUT
+	// Path to file
+	Path			: STRING;
+	//	File size
+	FileSize		: REFERENCE TO DINT;
+END_VAR
+VAR
+	_sMeth			: STRING := 'GetSize(): ';
+END_VAR
+</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="ReadAllBytes" ObjectId="8075c38e-6b03-42d4-8222-b6502318ab82">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Path">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Path of File to Read</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Contents">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <addData>
+                      <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                        <Attributes>
+                          <Attribute Name="variable_length_array" />
+                          <Attribute Name="Dimensions" Value="1" />
+                        </Attributes>
+                      </data>
+                    </addData>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Array of bytes to store read data</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_nReadLen">
+                    <type>
+                      <DINT />
+                    </type>
+                  </variable>
+                  <variable name="_sMeth">
+                    <type>
+                      <string />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'ReadAllBytes(): '" />
+                    </initialValue>
+                  </variable>
+                </localVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Read the binary content of a file into an array of bytes</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">
+CASE _nSeq OF
+	0 :
+		_sException := '';
+		_nHandle := 0;
+		
+		_fbFileOpen(sPathName := Path, nMode := (FOPEN_MODEBINARY OR FOPEN_MODEREAD), bExecute := TRUE);
+		_nSeq := 1;
+		
+	1 :
+		IF NOT _fbFileOpen.bBusy THEN
+			_fbFileOpen(bExecute := FALSE);
+			IF _fbFileOpen.bError THEN
+				_sException := 'Error in FB_FileOpen; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileOpen.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nHandle := _fbFileOpen.hFile;
+				_nSeq := 2;
+			END_IF
+		END_IF
+		
+	2 : 
+		_nReadLen := UPPER_BOUND(Contents, 1) - LOWER_BOUND(Contents, 1) + 1;
+		MEMSET(Contents, 0, TO_UDINT(_nReadLen));
+		_nReadLen := SEL((_nReadLen &gt; _nMaxReadLen), _nReadLen, _nMaxReadLen);
+		
+		_fbFileRead(hFile := _nHandle, pReadBuff := Contents, 
+			cbReadLen := TO_UDINT(_nReadLen), tTimeout := _tReadTimeout, bExecute := TRUE);
+			
+		_nSeq := 3;
+		
+	3 :
+		IF (NOT _fbFileRead.bBusy) OR _fbFileRead.bEOF THEN
+			_fbFileRead(bExecute := FALSE);
+			IF _fbFileRead.bError THEN
+				_sException := 'Error in FB_FileRead; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileRead.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nSeq := 4;
+			END_IF
+		END_IF
+		
+	4 : 
+		_fbFileClose(hFile := _nHandle, bExecute := TRUE);
+		_nSeq := 5;
+		
+	5 : 
+		IF NOT _fbFileClose.bBusy THEN
+			_fbFileClose(bExecute := FALSE);
+			IF _fbFileClose.bError THEN
+				_sException := 'Error in FB_FileClose; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileClose.nErrId));
+				_nHandle := 0;
+				_nSeq := 9;
+			ELSE
+				_nSeq := 0;
+				ReadAllBytes := TRUE;
+			END_IF
+		END_IF
+		
+	9 :
+		IF _nHandle &lt;&gt; 0 THEN
+			_nSeq := 4;
+		ELSE
+			_sException := CONCAT(_sMeth, _sException);
+			
+			_nSeq := 0;
+			ReadAllBytes := TRUE;
+		END_IF
+		
+END_CASE
+
+THIS^.Execute();
+
+RETURN;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Read the binary content of a file into an array of bytes
+METHOD ReadAllBytes : BOOL
+VAR_INPUT
+	// Path of File to Read
+	Path			: STRING;
+END_VAR
+VAR_IN_OUT
+	// Array of bytes to store read data
+	Contents		: ARRAY[*] OF BYTE;
+END_VAR
+VAR
+	_nReadLen		: DINT;
+	_sMeth			: STRING := 'ReadAllBytes(): ';
+END_VAR</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="ReadAllLines" ObjectId="ed10d283-0897-4c8c-a499-11cb21647de8">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Path">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Path of File to Read</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Contents">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <derived name="T_MaxString" />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <addData>
+                      <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                        <Attributes>
+                          <Attribute Name="variable_length_array" />
+                          <Attribute Name="Dimensions" Value="1" />
+                        </Attributes>
+                      </data>
+                    </addData>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> String Array to store Read Lines</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_sMeth">
+                    <type>
+                      <string />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'ReadAllLines(): '" />
+                    </initialValue>
+                  </variable>
+                </localVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Reads all the lines in a file to an array of strings</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">
+CASE _nSeq OF
+	0 :
+		_sException := '';
+		_nHandle := 0;
+		
+		_fbFileOpen(sPathName := Path, nMode := (FOPEN_MODETEXT OR FOPEN_MODEREAD), bExecute := TRUE);
+		_nSeq := 1;
+		
+	1 :
+		IF NOT _fbFileOpen.bBusy THEN
+			_fbFileOpen(bExecute := FALSE);
+			IF _fbFileOpen.bError THEN
+				_sException := 'Error in FB_FileOpen; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileOpen.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nHandle := _fbFileOpen.hFile;
+				_nIdx := LOWER_BOUND(Contents, 1);
+				_nSeq := 2;
+			END_IF
+		END_IF
+		
+	2 : 
+		IF (_nIdx &lt;= UPPER_BOUND(Contents, 1)) THEN
+			_fbLineRead(hFile := _nHandle, tTimeout := _tReadTimeout, bExecute := TRUE);
+			_nSeq := 3;
+		ELSE
+			_nSeq := 4;
+		END_IF
+		
+	3 :
+		IF (NOT _fbLineRead.bBusy) OR _fbLineRead.bEOF THEN
+			_fbLineRead(bExecute := FALSE);
+			IF _fbLineRead.bError THEN
+				_sException := 'Error in FB_FileGets; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbLineRead.nErrId));
+				_nSeq := 9;
+			ELSE
+				IF _fbLineRead.bEOF THEN
+					_nSeq := 4;
+				ELSE
+					Contents[_nIdx] := _fbLineRead.sLine;
+					_nIdx := _nIdx + 1;
+					_nSeq := 2;
+				END_IF
+			END_IF
+		END_IF
+		
+		
+	4 : 
+		FOR _nIdx := _nIdx TO UPPER_BOUND(Contents, 1) DO
+			Contents[_nIdx] := '';
+		END_FOR
+		
+		_fbFileClose(hFile := _nHandle, bExecute := TRUE);
+		_nSeq := 5;
+		
+	5 : 
+		IF NOT _fbFileClose.bBusy THEN
+			_fbFileClose(bExecute := FALSE);
+			IF _fbFileClose.bError THEN
+				_sException := 'Error in FB_FileClose; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileClose.nErrId));
+				_nHandle := 0;
+				_nSeq := 9;
+			ELSE
+				_nSeq := 0;
+				ReadAllLines := TRUE;
+			END_IF
+		END_IF
+		
+	9 :
+		IF _nHandle &lt;&gt; 0 THEN
+			_nSeq := 4;
+		ELSE
+			_sException := CONCAT(_sMeth, _sException);
+			Contents[LOWER_BOUND(Contents, 1)] := _sException;
+			
+			_nSeq := 0;
+			ReadAllLines := TRUE;
+		END_IF
+		
+END_CASE
+
+THIS^.Execute();
+
+RETURN;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Reads all the lines in a file to an array of strings
+METHOD ReadAllLines : BOOL
+VAR_INPUT
+	// Path of File to Read
+	Path			: STRING;
+END_VAR
+VAR_IN_OUT
+	// String Array to store Read Lines
+	Contents		: ARRAY[*] OF T_MaxString;
+END_VAR
+
+VAR
+	_sMeth			: STRING := 'ReadAllLines(): ';
+END_VAR</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="ReadAllText" ObjectId="966d7230-b4d3-4198-8980-2a1308a14be8">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Path">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Path of File to Read</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Contents">
+                    <type>
+                      <derived name="__SYSTEM.AnyType" />
+                    </type>
+                    <addData>
+                      <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                        <Attributes>
+                          <Attribute Name="anytypeclass" Value="ANY" />
+                        </Attributes>
+                      </data>
+                    </addData>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> String to store Read Data</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_nReadLen">
+                    <type>
+                      <DINT />
+                    </type>
+                  </variable>
+                  <variable name="_sMeth">
+                    <type>
+                      <string />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'ReadAllText(): '" />
+                    </initialValue>
+                  </variable>
+                </localVars>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                    <Attributes>
+                      <Attribute Name="hasanytype" />
+                    </Attributes>
+                  </data>
+                </addData>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Reads all the text from a file into a string</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">IF UDINT_TO_INT(Contents.TypeClass) &lt;&gt; 16 THEN
+	_sException := 'ReadData parameter is invalid type (STRING).';
+	ReadAllText := TRUE;
+END_IF
+
+CASE _nSeq OF
+	0 :
+		_sException := '';
+		_nHandle := 0;
+		
+		_fbFileOpen(sPathName := Path, nMode := (FOPEN_MODETEXT OR FOPEN_MODEREAD), bExecute := TRUE);
+		_nSeq := 1;
+		
+	1 :
+		IF NOT _fbFileOpen.bBusy THEN
+			_fbFileOpen(bExecute := FALSE);
+			IF _fbFileOpen.bError THEN
+				_sException := 'Error in FB_FileOpen; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileOpen.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nHandle := _fbFileOpen.hFile;
+				_nSeq := 2;
+			END_IF
+		END_IF
+		
+	2 : 
+		MEMSET(Contents.pValue, 0, TO_UDINT(Contents.diSize));
+		_nReadLen := SEL((Contents.diSize &gt; _nMaxReadLen), Contents.diSize, _nMaxReadLen);
+		_fbFileRead(hFile := _nHandle, pReadBuff := Contents.pValue, 
+			cbReadLen := TO_UDINT(_nReadLen), tTimeout := _tReadTimeout, bExecute := TRUE);
+			
+		_nSeq := 3;
+		
+	3 :
+		IF (NOT _fbFileRead.bBusy) OR _fbFileRead.bEOF THEN
+			_fbFileRead(bExecute := FALSE);
+			IF _fbFileRead.bError THEN
+				_sException := 'Error in FB_FileRead; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileRead.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nSeq := 4;
+			END_IF
+		END_IF
+		
+	4 : 
+		_fbFileClose(hFile := _nHandle, bExecute := TRUE);
+		_nSeq := 5;
+		
+	5 : 
+		IF NOT _fbFileClose.bBusy THEN
+			_fbFileClose(bExecute := FALSE);
+			IF _fbFileClose.bError THEN
+				_sException := 'Error in FB_FileClose; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileClose.nErrId));
+				_nHandle := 0;
+				_nSeq := 9;
+			ELSE
+				_nSeq := 0;
+				ReadAllText := TRUE;
+			END_IF
+		END_IF
+		
+	9 :
+		IF _nHandle &lt;&gt; 0 THEN
+			_nSeq := 4;
+		ELSE
+			_sException := CONCAT(_sMeth, _sException);
+			MEMCPY(Contents.pValue, ADR(_sException), TO_UDINT(LEN(_sException)));
+			
+			_nSeq := 0;
+			ReadAllText := TRUE;
+		END_IF
+		
+END_CASE
+
+THIS^.Execute();
+
+RETURN;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Reads all the text from a file into a string
+METHOD ReadAllText : BOOL
+VAR_INPUT
+	// Path of File to Read
+	Path			: STRING;
+	// String to store Read Data
+	Contents		: ANY;
+END_VAR
+VAR
+	_nReadLen		: DINT;
+	_sMeth			: STRING := 'ReadAllText(): ';
+END_VAR</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="WriteAllBytes" ObjectId="2b99a576-29cb-445e-83eb-01ce314b41e6">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Path">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Path to file</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Contents">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <addData>
+                      <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                        <Attributes>
+                          <Attribute Name="variable_length_array" />
+                          <Attribute Name="Dimensions" Value="1" />
+                        </Attributes>
+                      </data>
+                    </addData>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Array of bytes to write</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_sMeth">
+                    <type>
+                      <string />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'WriteAllBytes(): '" />
+                    </initialValue>
+                  </variable>
+                  <variable name="_nWriteLen">
+                    <type>
+                      <DINT />
+                    </type>
+                  </variable>
+                </localVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Write array of bytes to file</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">
+CASE _nSeq OF
+	0 : 
+		_sException := '';
+		_nHandle := 0;
+		
+		_fbFileOpen(sPathName := Path, nMode := (FOPEN_MODEBINARY OR FOPEN_MODEWRITE), bExecute := TRUE);
+		_nSeq := 1;
+		
+	1 :
+		IF NOT _fbFileOpen.bBusy THEN
+			_fbFileOpen(bExecute := FALSE);
+			IF _fbFileOpen.bError THEN
+				_sException := 'Error in FB_FileOpen; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileOpen.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nHandle := _fbFileOpen.hFile;
+				_nSeq := 2;
+			END_IF
+		END_IF
+		
+	2 :
+		_nWriteLen := UPPER_BOUND(Contents, 1) - LOWER_BOUND(Contents, 1) + 1;
+		
+		_fbFileWrite(hFile := _nHandle, pWriteBuff := Contents, cbWritelen := TO_UDINT(_nWriteLen), 
+			tTimeout := _tWriteTimeout, bExecute := TRUE);
+			
+		_nSeq := 3;
+		
+	3 :
+		IF NOT _fbFileWrite.bBusy THEN
+			_fbFileWrite(bExecute := FALSE);
+			IF _fbFileWrite.bError THEN
+				_sException := 'Error in FB_FileWrite; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileWrite.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nSeq := 4;
+			END_IF
+		END_IF
+		
+	
+	4 : 
+		_fbFileClose(hFile := _nHandle, bExecute := TRUE);
+		_nSeq := 5;
+		
+	5 : 
+		IF NOT _fbFileClose.bBusy THEN
+			_fbFileClose(bExecute := FALSE);
+			IF _fbFileClose.bError THEN
+				_sException := 'Error in FB_FileClose; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileClose.nErrId));
+				_nHandle := 0;
+				_nSeq := 9;
+			ELSE
+				_nSeq := 0;
+				WriteAllBytes := TRUE;
+			END_IF
+		END_IF
+		
+	9 : 
+		IF _nHandle &lt;&gt; 0 THEN
+			_nSeq := 4;
+		ELSE
+			_sException := CONCAT(_sMeth, _sException);
+			
+			_nSeq := 0;
+			WriteAllBytes := TRUE;
+		END_IF
+		
+END_CASE
+
+THIS^.Execute();
+
+RETURN;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Write array of bytes to file
+METHOD WriteAllBytes : BOOL
+VAR_INPUT
+	// Path to file
+	Path			: STRING;
+END_VAR
+VAR_IN_OUT
+	// Array of bytes to write
+	Contents		: ARRAY[*] OF BYTE;
+END_VAR
+VAR
+	_sMeth			: STRING := 'WriteAllBytes(): ';
+	_nWriteLen		: DINT;
+END_VAR</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="WriteAllLines" ObjectId="964318b3-6a2e-480b-aaaf-1cb43687997a">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Path">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Path of file to write</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="InsertNewlines">
+                    <type>
+                      <BOOL />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Insert Newlines chars after each array element</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Contents">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <derived name="T_MaxString" />
+                        </baseType>
+                      </pointer>
+                    </type>
+                    <addData>
+                      <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                        <Attributes>
+                          <Attribute Name="variable_length_array" />
+                          <Attribute Name="Dimensions" Value="1" />
+                        </Attributes>
+                      </data>
+                    </addData>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Array of strings to write</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_sMeth">
+                    <type>
+                      <string />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'WriteAllLines(): '" />
+                    </initialValue>
+                  </variable>
+                  <variable name="_sLine">
+                    <type>
+                      <derived name="T_MaxString" />
+                    </type>
+                  </variable>
+                </localVars>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Writes a string array to a file. If the file does not exist, it is created. If the file does exist, its contents are overwritten.</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">CASE _nSeq OF
+	0 : 
+		_sException := '';
+		_nHandle := 0;
+		
+		_fbFileOpen(sPathName := Path, nMode := (FOPEN_MODETEXT OR FOPEN_MODEWRITE), bExecute := TRUE);
+		_nSeq := 1;
+		
+	1 :
+		IF NOT _fbFileOpen.bBusy THEN
+			_fbFileOpen(bExecute := FALSE);
+			IF _fbFileOpen.bError THEN
+				_sException := 'Error in FB_FileOpen; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileOpen.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nHandle := _fbFileOpen.hFile;
+				_nIdx := LOWER_BOUND(Contents, 1);
+				_nSeq := 2;
+			END_IF
+		END_IF
+		
+	2 :
+		IF (_nIdx &lt;= UPPER_BOUND(Contents, 1)) THEN
+			IF Contents[_nIdx] &lt;&gt; '' THEN
+				_sLine := SEL(InsertNewlines, Contents[_nIdx], CONCAT(Contents[_nIdx], '$0A'));
+				
+				_fbLineWrite(hFile := _nHandle, sLine := _sLine, 
+					tTimeout := _tWriteTimeout, bExecute := TRUE);
+			END_IF
+			_nSeq := 3;
+		ELSE
+			_nSeq := 4;
+		END_IF
+		
+	3 :
+		IF NOT _fbLineWrite.bBusy THEN
+			_fbLineWrite(bExecute := FALSE);
+			IF _fbLineWrite.bError THEN
+				_sException := 'Error in FB_FilePuts; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbLineWrite.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nIdx := _nIdx + 1;
+				_nSeq := 2;
+			END_IF
+		END_IF
+		
+	
+	4 : 
+		_fbFileClose(hFile := _nHandle, bExecute := TRUE);
+		_nSeq := 5;
+		
+	5 : 
+		IF NOT _fbFileClose.bBusy THEN
+			_fbFileClose(bExecute := FALSE);
+			IF _fbFileClose.bError THEN
+				_sException := 'Error in FB_FileClose; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileClose.nErrId));
+				_nHandle := 0;
+				_nSeq := 9;
+			ELSE
+				_nSeq := 0;
+				WriteAllLines := TRUE;
+			END_IF
+		END_IF
+		
+	9 : 
+		IF _nHandle &lt;&gt; 0 THEN
+			_nSeq := 4;
+		ELSE
+			_sException := CONCAT(_sMeth, _sException);
+			
+			_nSeq := 0;
+			WriteAllLines := TRUE;
+		END_IF
+		
+END_CASE
+
+THIS^.Execute();
+
+RETURN;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Writes a string array to a file. If the file does not exist, it is created. If the file does exist, its contents are overwritten.
+METHOD WriteAllLines : BOOL
+VAR_INPUT
+	// Path of file to write
+	Path			: STRING;
+	// Insert Newlines chars after each array element
+	InsertNewlines	: BOOL;
+END_VAR
+VAR_IN_OUT
+	// Array of strings to write
+	Contents		: ARRAY[*] OF T_MaxString;
+END_VAR
+VAR
+	_sMeth			: STRING := 'WriteAllLines(): ';
+	_sLine			: T_MaxString;
+END_VAR
+</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="WriteAllText" ObjectId="bbfc9ce6-165e-4d7a-989f-c4f18d7d00e1">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <inputVars>
+                  <variable name="Path">
+                    <type>
+                      <string />
+                    </type>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> Path of file to write</xhtml>
+                    </documentation>
+                  </variable>
+                  <variable name="Contents">
+                    <type>
+                      <derived name="__SYSTEM.AnyType" />
+                    </type>
+                    <addData>
+                      <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                        <Attributes>
+                          <Attribute Name="anytypeclass" Value="ANY" />
+                        </Attributes>
+                      </data>
+                    </addData>
+                    <documentation>
+                      <xhtml xmlns="http://www.w3.org/1999/xhtml"> String data to write</xhtml>
+                    </documentation>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_sMeth">
+                    <type>
+                      <string />
+                    </type>
+                    <initialValue>
+                      <simpleValue value="'WriteAllText(): '" />
+                    </initialValue>
+                  </variable>
+                  <variable name="_nWriteLen">
+                    <type>
+                      <DINT />
+                    </type>
+                  </variable>
+                  <variable name="_pCharIdx">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                  </variable>
+                  <variable name="_charVal">
+                    <type>
+                      <BYTE />
+                    </type>
+                  </variable>
+                </localVars>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/attributes" handleUnknown="implementation">
+                    <Attributes>
+                      <Attribute Name="hasanytype" />
+                    </Attributes>
+                  </data>
+                </addData>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Writes a string to the file. If the file does not exist, it is created. If the file exists, its contents are overwritten.</xhtml>
+                </documentation>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">IF UDINT_TO_INT(Contents.TypeClass) &lt;&gt; 16 THEN
+	_sException := 'WriteData parameter is invalid type (STRING).';
+	WriteAllText := TRUE;
+END_IF
+
+CASE _nSeq OF
+	0 : 
+		_sException := '';
+		_nHandle := 0;
+		
+		_fbFileOpen(sPathName := Path, nMode := (FOPEN_MODETEXT OR FOPEN_MODEWRITE), bExecute := TRUE);
+		_nSeq := 1;
+		
+	1 :
+		IF NOT _fbFileOpen.bBusy THEN
+			_fbFileOpen(bExecute := FALSE);
+			IF _fbFileOpen.bError THEN
+				_sException := 'Error in FB_FileOpen; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileOpen.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nHandle := _fbFileOpen.hFile;
+				_nSeq := 2;
+			END_IF
+		END_IF
+		
+	2 :
+		IF _bTrimWriteData THEN
+			_nWriteLen := THIS^.TrimLen(Contents.pValue, Contents.diSize);
+		ELSE
+			_nWriteLen := SEL((Contents.diSize &gt; _nMaxWriteLen), Contents.diSize, _nMaxWriteLen);
+		END_IF
+		
+		_fbFileWrite(hFile := _nHandle, pWriteBuff := Contents.pValue, cbWritelen := TO_UDINT(_nWriteLen), 
+			tTimeout := _tWriteTimeout, bExecute := TRUE);
+			
+		_nSeq := 3;
+		
+	3 :
+		IF NOT _fbFileWrite.bBusy THEN
+			_fbFileWrite(bExecute := FALSE);
+			IF _fbFileWrite.bError THEN
+				_sException := 'Error in FB_FileWrite; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileWrite.nErrId));
+				_nSeq := 9;
+			ELSE
+				_nSeq := 4;
+			END_IF
+		END_IF
+		
+	
+	4 : 
+		_fbFileClose(hFile := _nHandle, bExecute := TRUE);
+		_nSeq := 5;
+		
+	5 : 
+		IF NOT _fbFileClose.bBusy THEN
+			_fbFileClose(bExecute := FALSE);
+			IF _fbFileClose.bError THEN
+				_sException := 'Error in FB_FileClose; ';
+				_sException := CONCAT(_sException, TO_STRING(_fbFileClose.nErrId));
+				_nHandle := 0;
+				_nSeq := 9;
+			ELSE
+				_nSeq := 0;
+				WriteAllText := TRUE;
+			END_IF
+		END_IF
+		
+	9 : 
+		IF _nHandle &lt;&gt; 0 THEN
+			_nSeq := 4;
+		ELSE
+			_sException := CONCAT(_sMeth, _sException);
+			
+			_nSeq := 0;
+			WriteAllText := TRUE;
+		END_IF
+		
+END_CASE
+
+THIS^.Execute();
+
+RETURN;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Writes a string to the file. If the file does not exist, it is created. If the file exists, its contents are overwritten.
+METHOD WriteAllText : BOOL
+VAR_INPUT
+	// Path of file to write
+	Path			: STRING;
+	// String data to write
+	Contents		: ANY;
+END_VAR
+VAR
+	_sMeth			: STRING := 'WriteAllText(): ';
+	_nWriteLen		: DINT;
+	_pCharIdx		: POINTER TO BYTE;
+	_charVal		: BYTE;
+END_VAR</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/method" handleUnknown="implementation">
+            <Method name="TrimLen" ObjectId="0d71845d-818c-43c3-9a48-304292323eed">
+              <interface>
+                <returnType>
+                  <DINT />
+                </returnType>
+                <inputVars>
+                  <variable name="CharPtr">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                  </variable>
+                  <variable name="Len">
+                    <type>
+                      <DINT />
+                    </type>
+                  </variable>
+                </inputVars>
+                <localVars>
+                  <variable name="_pCharIdx">
+                    <type>
+                      <pointer>
+                        <baseType>
+                          <BYTE />
+                        </baseType>
+                      </pointer>
+                    </type>
+                  </variable>
+                  <variable name="_charVal">
+                    <type>
+                      <BYTE />
+                    </type>
+                  </variable>
+                  <variable name="_ret">
+                    <type>
+                      <DINT />
+                    </type>
+                  </variable>
+                </localVars>
+                <addData>
+                  <data name="http://www.3s-software.com/plcopenxml/accessmodifiers" handleUnknown="implementation">
+                    <AccessModifiers Private="true" />
+                  </data>
+                </addData>
+              </interface>
+              <body>
+                <ST>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">_pCharIdx := CharPtr;
+FOR _nIdx := 0 TO Len - 1 DO
+	_charVal := _pCharIdx^;
+	IF _charVal = 0 THEN
+		EXIT;
+	ELSE
+		_ret := _ret + 1;
+		_pCharIdx := _pCharIdx + 1;
+	END_IF
+END_FOR
+
+TrimLen := _ret;</xhtml>
+                </ST>
+              </body>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">METHOD PRIVATE TrimLen : DINT
+VAR_INPUT
+	CharPtr		: POINTER TO BYTE;
+	Len			: DINT;
+END_VAR
+VAR
+	_pCharIdx		: POINTER TO BYTE;
+	_charVal		: BYTE;
+	_ret			: DINT;
+END_VAR</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Method>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/property" handleUnknown="implementation">
+            <Property name="Exception" ObjectId="7dcc328a-ffe0-4768-871c-f9d6d8df2014">
+              <interface>
+                <returnType>
+                  <string />
+                </returnType>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Last Operation Exception String</xhtml>
+                </documentation>
+              </interface>
+              <GetAccessor>
+                <interface />
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">Exception := _sException;</xhtml>
+                  </ST>
+                </body>
+                <InterfaceAsPlainText>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">VAR
+END_VAR
+</xhtml>
+                </InterfaceAsPlainText>
+                <addData />
+              </GetAccessor>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Last Operation Exception String
+PROPERTY Exception : STRING</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Property>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/property" handleUnknown="implementation">
+            <Property name="MaxReadLen" ObjectId="62613fe5-f79c-422e-967c-bccbfc132b62">
+              <interface>
+                <returnType>
+                  <DINT />
+                </returnType>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Maximum File Read Length (bytes) Default: 1048576 (1MB)</xhtml>
+                </documentation>
+              </interface>
+              <GetAccessor>
+                <interface />
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">MaxReadLen := _nMaxReadLen;</xhtml>
+                  </ST>
+                </body>
+                <InterfaceAsPlainText>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">VAR
+END_VAR
+</xhtml>
+                </InterfaceAsPlainText>
+                <addData />
+              </GetAccessor>
+              <SetAccessor>
+                <interface />
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">_nMaxReadLen := MaxReadLen;</xhtml>
+                  </ST>
+                </body>
+                <InterfaceAsPlainText>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">VAR
+END_VAR
+</xhtml>
+                </InterfaceAsPlainText>
+                <addData />
+              </SetAccessor>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Maximum File Read Length (bytes) Default: 1048576 (1MB)
+PROPERTY MaxReadLen : DINT</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Property>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/property" handleUnknown="implementation">
+            <Property name="MaxWriteLen" ObjectId="3e86157e-a2c0-4a38-9620-ca1eea29f938">
+              <interface>
+                <returnType>
+                  <DINT />
+                </returnType>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Maximum File Write Length (bytes) Default: 1048576 (1MB)</xhtml>
+                </documentation>
+              </interface>
+              <GetAccessor>
+                <interface />
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">MaxWriteLen := _nMaxWriteLen;</xhtml>
+                  </ST>
+                </body>
+                <InterfaceAsPlainText>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">VAR
+END_VAR
+</xhtml>
+                </InterfaceAsPlainText>
+                <addData />
+              </GetAccessor>
+              <SetAccessor>
+                <interface />
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">_nMaxWriteLen := MaxWriteLen;</xhtml>
+                  </ST>
+                </body>
+                <InterfaceAsPlainText>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">VAR
+END_VAR
+</xhtml>
+                </InterfaceAsPlainText>
+                <addData />
+              </SetAccessor>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Maximum File Write Length (bytes) Default: 1048576 (1MB)
+PROPERTY MaxWriteLen : DINT</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Property>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/property" handleUnknown="implementation">
+            <Property name="ReadTimeout" ObjectId="2191df40-3238-4420-af59-029b59e77ae1">
+              <interface>
+                <returnType>
+                  <TIME />
+                </returnType>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> File Read Operation Timeout (Default: T#1S)</xhtml>
+                </documentation>
+              </interface>
+              <GetAccessor>
+                <interface />
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">ReadTimeout := _tReadTimeout;</xhtml>
+                  </ST>
+                </body>
+                <InterfaceAsPlainText>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">VAR
+END_VAR
+</xhtml>
+                </InterfaceAsPlainText>
+                <addData />
+              </GetAccessor>
+              <SetAccessor>
+                <interface />
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">_tReadTimeout := ReadTimeout;</xhtml>
+                  </ST>
+                </body>
+                <InterfaceAsPlainText>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">VAR
+END_VAR
+</xhtml>
+                </InterfaceAsPlainText>
+                <addData />
+              </SetAccessor>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// File Read Operation Timeout (Default: T#1S)
+PROPERTY ReadTimeout : TIME</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Property>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/property" handleUnknown="implementation">
+            <Property name="TrimWriteData" ObjectId="9e43c89c-d4c5-42c9-b869-6fbaec7ba0e9">
+              <interface>
+                <returnType>
+                  <BOOL />
+                </returnType>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> Trim null characters from write contents before writing/appending to file (Default: true)</xhtml>
+                </documentation>
+              </interface>
+              <GetAccessor>
+                <interface />
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">TrimWriteData := _bTrimWriteData;</xhtml>
+                  </ST>
+                </body>
+                <InterfaceAsPlainText>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">VAR
+END_VAR
+</xhtml>
+                </InterfaceAsPlainText>
+                <addData />
+              </GetAccessor>
+              <SetAccessor>
+                <interface />
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">_bTrimWriteData := TrimWriteData;</xhtml>
+                  </ST>
+                </body>
+                <InterfaceAsPlainText>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">VAR
+END_VAR
+</xhtml>
+                </InterfaceAsPlainText>
+                <addData />
+              </SetAccessor>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// Trim null characters from write contents before writing/appending to file (Default: true)
+PROPERTY TrimWriteData : BOOL</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Property>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/property" handleUnknown="implementation">
+            <Property name="WriteTimeout" ObjectId="7ededd4d-ed11-4608-bed5-c8e5e25fab6c">
+              <interface>
+                <returnType>
+                  <TIME />
+                </returnType>
+                <documentation>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml"> File Write Operation Timeout (Default: T#1S)</xhtml>
+                </documentation>
+              </interface>
+              <GetAccessor>
+                <interface />
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">WriteTimeout := _tWriteTimeout;</xhtml>
+                  </ST>
+                </body>
+                <InterfaceAsPlainText>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">VAR
+END_VAR
+</xhtml>
+                </InterfaceAsPlainText>
+                <addData />
+              </GetAccessor>
+              <SetAccessor>
+                <interface />
+                <body>
+                  <ST>
+                    <xhtml xmlns="http://www.w3.org/1999/xhtml">_tWriteTimeout := WriteTimeout;</xhtml>
+                  </ST>
+                </body>
+                <InterfaceAsPlainText>
+                  <xhtml xmlns="http://www.w3.org/1999/xhtml">VAR
+END_VAR
+</xhtml>
+                </InterfaceAsPlainText>
+                <addData />
+              </SetAccessor>
+              <InterfaceAsPlainText>
+                <xhtml xmlns="http://www.w3.org/1999/xhtml">// File Write Operation Timeout (Default: T#1S)
+PROPERTY WriteTimeout : TIME</xhtml>
+              </InterfaceAsPlainText>
+              <addData />
+            </Property>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">{attribute 'hide_all_locals'}
+FUNCTION_BLOCK FB_FileIO
+VAR
+	// open / close FBs
+	_fbFileOpen			: FB_FileOpen;
+	_fbFileClose		: FB_FileClose;
+	
+	// reader FBs
+	_fbFileRead 		: FB_FileRead;
+	_fbLineRead			: FB_FileGets;
+	
+	// seek/tell
+	_fbSeek				: FB_FileSeek;
+	_fbTell				: FB_FileTell;
+	
+	// writer FBs
+	_fbFileWrite 		: FB_FileWrite;
+	_fbLineWrite		: FB_FilePuts;
+	_fbFileDelete		: FB_FileDelete;
+	
+	// shared locals
+	_nHandle			: UINT;
+	_nSeq				: DINT;
+	_nIdx				: DINT;
+	
+	_copyBuffer			: POINTER TO BYTE;
+	_copyRW				: BOOL;
+	
+	// property fields w/ init values
+	_nMaxReadLen		: DINT := 1048576;
+	_tReadTimeout		: TIME := T#1S;
+	
+	_nMaxWriteLen		: DINT := 1048576;
+	_tWriteTimeout		: TIME := T#1S;
+	_bTrimWriteData		: BOOL := TRUE;
+	
+	_sException			: STRING;
+END_VAR
+</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>66eef331-3e29-4baf-b56a-a29cb0e98f7c</ObjectId>
+          </data>
+        </addData>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Object Name="FB_FileIO" ObjectId="66eef331-3e29-4baf-b56a-a29cb0e98f7c">
+          <Object Name="AppendLines" ObjectId="36f340aa-5e81-47a1-94ab-8b19912f80ca" />
+          <Object Name="AppendText" ObjectId="2ccc9883-848b-4927-8cc0-43df17a58b31" />
+          <Object Name="CopyFile" ObjectId="878f3643-5679-4be8-8d08-6c7c5c61ab2e" />
+          <Object Name="DeleteFile" ObjectId="0745acf6-2a86-42ea-82dc-4d0a62b3ea31" />
+          <Object Name="Exception" ObjectId="7dcc328a-ffe0-4768-871c-f9d6d8df2014" />
+          <Object Name="Execute" ObjectId="402b97a9-4372-43e1-8b1c-328e7aeab612" />
+          <Object Name="Exists" ObjectId="a7b26c8e-b19a-4dc9-8c22-1d29ce9e704e" />
+          <Object Name="GetSize" ObjectId="c76ffc9b-ac92-421a-8c59-e1bd0cddcaaf" />
+          <Object Name="MaxReadLen" ObjectId="62613fe5-f79c-422e-967c-bccbfc132b62" />
+          <Object Name="MaxWriteLen" ObjectId="3e86157e-a2c0-4a38-9620-ca1eea29f938" />
+          <Object Name="ReadAllBytes" ObjectId="8075c38e-6b03-42d4-8222-b6502318ab82" />
+          <Object Name="ReadAllLines" ObjectId="ed10d283-0897-4c8c-a499-11cb21647de8" />
+          <Object Name="ReadAllText" ObjectId="966d7230-b4d3-4198-8980-2a1308a14be8" />
+          <Object Name="ReadTimeout" ObjectId="2191df40-3238-4420-af59-029b59e77ae1" />
+          <Object Name="TrimWriteData" ObjectId="9e43c89c-d4c5-42c9-b869-6fbaec7ba0e9" />
+          <Object Name="WriteAllBytes" ObjectId="2b99a576-29cb-445e-83eb-01ce314b41e6" />
+          <Object Name="WriteAllLines" ObjectId="964318b3-6a2e-480b-aaaf-1cb43687997a" />
+          <Object Name="WriteAllText" ObjectId="bbfc9ce6-165e-4d7a-989f-c4f18d7d00e1" />
+          <Object Name="WriteTimeout" ObjectId="7ededd4d-ed11-4608-bed5-c8e5e25fab6c" />
+          <Object Name="TrimLen" ObjectId="0d71845d-818c-43c3-9a48-304292323eed" />
+        </Object>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>
