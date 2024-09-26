@@ -1,8 +1,12 @@
-File IO function block for TwinCAT PLC based loosely on C# System.IO static file methods:
+File IO function block for Beckhoff TwinCAT PLC based loosely on C# System.IO static file methods:
 - WriteAllText, WriteAllLines, WriteAllBytes
 - AppendText, AppendLines
 - ReadAllText, ReadAllLines, ReadAllBytes
 - CheckExists, CopyFile, DeleteFile, GetSize
+
+Programmed in version 4024.
+
+---
 
 Repository contains the portable FB as PLCOpen XML, along with a project to demonstrate use.
 
