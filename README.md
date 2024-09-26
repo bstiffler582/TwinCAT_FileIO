@@ -14,7 +14,7 @@ Example write:
 ```js
 fbFileIO 		: FB_FileIO;
 sTestWrite		: STRING(255);
-bWriteAllText: BOOL;
+bWriteAllText		: BOOL;
 sWritePath		: STRING := 'C:\TestFile.txt';
 // -----
 
@@ -32,7 +32,7 @@ Example read:
 ```js
 fbFileIO 		: FB_FileIO;
 sTestRead		: STRING(255);
-bReadAllText: BOOL;
+bReadAllText		: BOOL;
 sReadPath		: STRING := 'C:\TestFile.txt';
 // -----
 
